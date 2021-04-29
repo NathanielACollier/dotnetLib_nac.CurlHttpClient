@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nac.CurlHttpClient", "nac.CurlHttpClient\nac.CurlHttpClient.csproj", "{B08CE414-0C7B-4E70-B7F5-805F20E9E5EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3D22EEB2-BD9D-426B-9264-4893EECB9264}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B08CE414-0C7B-4E70-B7F5-805F20E9E5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B08CE414-0C7B-4E70-B7F5-805F20E9E5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B08CE414-0C7B-4E70-B7F5-805F20E9E5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B08CE414-0C7B-4E70-B7F5-805F20E9E5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D22EEB2-BD9D-426B-9264-4893EECB9264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D22EEB2-BD9D-426B-9264-4893EECB9264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D22EEB2-BD9D-426B-9264-4893EECB9264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D22EEB2-BD9D-426B-9264-4893EECB9264}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2303D901-B6B9-4D8D-B86D-996AD0B95C9A}
+	EndGlobalSection
+EndGlobal
