@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageVersion>1.0.3</PackageVersion>
+    <Description>Provides a high level HttpClient with json support from NewtonSoft.Json</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/NathanielACollier/dotnetLib_nac.CurlHttpClient</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

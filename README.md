@@ -13,9 +13,13 @@
 ```
 
 ### POST
-+ Basic Post FormPost method
++ Basic Post
 ```c#
-    var http = new nac.CurlHttpClient.http();
-    var result = http.post("http://httpbin.org/post",
-        requestBody: "fieldname1=fieldvalue1&fieldname2=fieldvalue2");
+    var http = new nac.CurlHttpClient.HttpClient();
+    var result = await lib.shared.http.postJSONAsync<string>("http://httpbin.org/post",
+        data: new
+        {
+            Param1 = "Apple",
+            Param2 = "Orange"
+        });
 ```
