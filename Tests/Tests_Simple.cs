@@ -36,6 +36,17 @@ namespace Tests
             
             Assert.IsTrue(!string.IsNullOrWhiteSpace(result));
         }
+
+
+
+
+        [TestMethod]
+        public async Task get_baseAddressSet()
+        {
+            var result = await lib.shared.http_HttpBin.getJSONAsync<model.HttpBin_IP_ResponseType>("ip");
+            
+            Assert.IsTrue(!string.IsNullOrWhiteSpace(result.origin));
+        }
         
         
         

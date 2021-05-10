@@ -13,17 +13,35 @@ namespace Tests.lib
             {
                 if (__http == null)
                 {
-                    __http = new nac.CurlHttpClient.HttpClient(new HttpClientSetup()
-                    {
-                        onNewHttpResponse = (_curlResult) =>
-                        {
-                            System.Diagnostics.Debug.WriteLine(_curlResult.ToString());
-                        }
-                    });
+                    __http = lib.httpFactory.create();
                 }
 
                 return __http;
             }
         }
+
+
+        private static nac.CurlHttpClient.HttpClient __http_HttpBIn;
+
+        public static nac.CurlHttpClient.HttpClient http_HttpBin
+        {
+            get
+            {
+                if (__http_HttpBIn == null)
+                {
+                    __http_HttpBIn = lib.httpFactory.create(options =>
+                    {
+                        options.baseAddress = "http://httpbin.org/";
+                    });
+                }
+
+                return __http_HttpBIn;
+            }
+        }
+
+
+
+
+
     }
 }
