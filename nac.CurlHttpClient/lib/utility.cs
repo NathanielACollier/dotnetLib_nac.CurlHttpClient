@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using nac.CurlThin.Enums;
 using Newtonsoft.Json;
 
 namespace nac.CurlHttpClient.lib
@@ -59,6 +60,12 @@ namespace nac.CurlHttpClient.lib
 
         public static T ProcessHttpResponse<T>(nac.CurlHttpClient.LowLevel.model.CurlExecResult response, System.Net.HttpStatusCode[] successCodes =null )
         {
+
+            if (response.CurlResultCode != CURLcode.OK)
+            {
+                throw new Exception($"Curl failure.  Result Code: {response.CurlResultCode}");
+            }
+            
             if( successCodes == null || successCodes.Length < 1)
             {
                 successCodes = new[] { HttpStatusCode.OK, HttpStatusCode.NoContent };

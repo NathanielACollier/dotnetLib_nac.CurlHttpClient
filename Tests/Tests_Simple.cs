@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -47,8 +48,29 @@ namespace Tests
             
             Assert.IsTrue(!string.IsNullOrWhiteSpace(result.origin));
         }
-        
-        
+
+
+        [TestMethod]
+        public async Task testShortTimeout()
+        {
+            var http = lib.httpFactory.create(options =>
+            {
+                options.baseAddress = "http://httpbin.org/";
+                options.Timeout = new TimeSpan(0, 0, 0, 0, 20);
+            });
+
+            try
+            {
+                var result = await http.getJSONAsync<string>("ip");
+                Assert.Fail("Exception should have been thrown because of timeout");
+            }
+            catch (Exception ex)
+            {
+                Assert.IsTrue(ex.Message.StartsWith("Curl failure") && 
+                              ex.Message.EndsWith("OPERATION_TIMEDOUT"));
+            }
+            
+        }
         
     }
 }
